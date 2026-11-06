@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d2d">
+<title>إلى رحومة ❤️</title>
+<style>
+:root{--night:#100d2d;--purple:#6b48b8;--pink:#ff8fcb;--cream:#fff4fb;--muted:#d8c8ef}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Tahoma,Arial,sans-serif;background:var(--night);color:var(--cream)}
+body{overflow-x:hidden;background:radial-gradient(ellipse at 50% 0%,#30205f 0%,#171337 42%,#09091b 100%);min-height:100vh}
+button,input{font:inherit}
+button{cursor:pointer}
+#sky{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.star{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px #b8a5ff;animation:twinkle var(--dur,3s) ease-in-out infinite alternate;opacity:.8}
+@keyframes twinkle{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
+.moon{position:absolute;top:7vh;left:12%;width:76px;height:76px;border-radius:50%;background:#fff4d4;box-shadow:0 0 22px #fff0bd,0 0 70px #a58aff,0 0 130px #7452cf}
+.moon:after{content:"";position:absolute;top:-7px;left:20px;width:74px;height:74px;border-radius:50%;background:#211849}
+.wrap{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px clamp(16px,4vw,44px);gap:12px}
+.logo{font-weight:bold;letter-spacing:.3px;color:#ffd6f0}
+.progress{font-size:.82rem;color:#d8c8ef;background:#ffffff12;border:1px solid #ffffff20;padding:8px 12px;border-radius:99px}
+main{width:min(920px,100%);margin:auto;padding:18px 20px 38px;display:flex;align-items:center;justify-content:center;flex:1}
+.page{display:none;width:100%;animation:enter .65s ease both}
+.page.active{display:block}
+@keyframes enter{from{opacity:0;transform:translateY(18px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+.panel{max-width:760px;margin:auto;text-align:center;padding:clamp(24px,5vw,54px);border:1px solid #ffffff25;border-radius:30px;background:linear-gradient(145deg,#ffffff12,#ffffff06);box-shadow:0 24px 80px #0003;backdrop-filter:blur(10px)}
+.eyebrow{color:#f9b9e3;font-size:.9rem;letter-spacing:1px;margin:0 0 14px}
+h1,h2{line-height:1.35;margin:0 0 18px}
+h1{font-size:clamp(2.5rem,8vw,5.2rem);color:#fff3fb;text-shadow:0 0 26px #d16bcf88}
+h2{font-size:clamp(1.8rem,5vw,3rem);color:#ffe0f3}
+p{line-height:2;font-size:clamp(1rem,2.4vw,1.16rem);color:#f0e7fb}
+.sub{max-width:600px;margin:0 auto 25px;color:#ded0f2}
+.heart{display:inline-block;color:#ff9dcf;animation:heartbeat 1.5s ease-in-out infinite}
+@keyframes heartbeat{50%{transform:scale(1.18)}}
+.btnrow{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{border:0;border-radius:999px;padding:13px 23px;font-weight:bold;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#ffadd9,#c9a6ff);color:#24123c;box-shadow:0 8px 24px #d56dcf35}
+.secondary{background:#ffffff10;color:#fff;border:1px solid #ffffff35}
+.smallnote{font-size:.85rem;color:#c9b9e6;margin-top:18px}
+.countdown{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0}
+.timebox{min-width:76px;padding:12px 10px;border-radius:16px;background:#ffffff10;border:1px solid #ffffff1b}
+.timebox strong{display:block;font-size:1.65rem;color:#fff}
+.timebox span{font-size:.8rem;color:#d8c8ef}
+.letter{max-width:640px;margin:auto;text-align:right;background:#fff8fd;color:#4a2a55;border-radius:20px;padding:clamp(22px,4vw,38px);box-shadow:0 14px 45px #0003;line-height:2.2;font-size:1.05rem}
+.letter p{color:#573b60;font-size:1.03rem}
+.signature{text-align:left;color:#a34c89;font-weight:bold;margin-top:18px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.photo{min-height:135px;border:1px dashed #e5c4f5;border-radius:18px;background:linear-gradient(145deg,#ffffff14,#ffb9e012);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;color:#ead9f6;padding:12px}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo span{position:relative;z-index:1;text-shadow:0 2px 8px #000;background:#24133a99;border-radius:9px;padding:5px 8px}
+.upload{display:inline-flex;align-items:center;gap:8px;justify-content:center;margin-top:15px;border:1px solid #ffffff35;border-radius:999px;padding:11px 16px;color:#fff;background:#ffffff10}
+.upload input{max-width:190px;font-size:.8rem}
+.wishes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px auto 0;max-width:650px}
+.wish{border:1px solid #ffffff24;background:#ffffff0c;border-radius:18px;padding:18px;color:#fff0fa;line-height:1.8}
+.cake-scene{font-size:clamp(4rem,16vw,8rem);margin:10px 0;filter:drop-shadow(0 0 22px #ff9fdb88);cursor:pointer;transition:transform .2s}
+.cake-scene:hover{transform:scale(1.06)}
+.candle{font-size:2rem;display:inline-block;animation:flame .7s infinite alternate}
+@keyframes flame{to{transform:rotate(5deg) scale(1.08);filter:brightness(1.3)}}
+.final-stars{font-size:clamp(2.5rem,8vw,4.5rem);letter-spacing:5px;color:#ffe9a8;text-shadow:0 0 25px #ffe9a8;animation:twinkle 2s infinite alternate}
+.final-name{font-size:clamp(2.5rem,8vw,5rem);color:#ffb9e1;text-shadow:0 0 30px #e774dd;margin:12px 0}
+.footer{text-align:center;padding:12px 16px 22px;color:#a99ac8;font-size:.78rem}
+.toast{min-height:1.5em;color:#ffd2ed;font-size:.9rem;margin-top:12px}
+@media(max-width:560px){.moon{width:54px;height:54px;top:5vh;left:8%}.moon:after{width:53px;height:53px;left:15px;top:-5px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.photo{min-height:120px}.wishes{grid-template-columns:1fr}.panel{padding:25px 17px}.topbar{padding:14px 16px}}
+
+.gate{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(ellipse at 50% 0%,#30205f 0%,#171337 48%,#09091b 100%);transition:opacity .8s ease,visibility .8s ease}
+.gate.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.gate-panel{width:min(560px,100%);text-align:center;padding:clamp(25px,5vw,48px);border:1px solid #ffffff30;border-radius:28px;background:linear-gradient(145deg,#ffffff16,#ffffff08);box-shadow:0 24px 80px #0005;backdrop-filter:blur(12px)}
+.gate-panel h1{font-size:clamp(1.8rem,6vw,3rem);margin-bottom:14px}
+.gate-panel p{color:#eadcf8}
+.gate-input{width:100%;max-width:360px;padding:14px 18px;border-radius:999px;border:1px solid #ffffff55;background:#ffffff15;color:white;text-align:center;outline:none;margin-top:12px}
+.gate-input::placeholder{color:#d8c8ef}
+.gate-message{min-height:2em;margin-top:14px;color:#ffd2ed;font-weight:bold}
+.gate-stars{position:fixed;inset:0;pointer-events:none;z-index:30;overflow:hidden}
+.gate-star{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff4c2;box-shadow:0 0 12px 4px #d9b8ff;animation:gateBurst 1.8s ease-out forwards}
+@keyframes gateBurst{0%{opacity:0;transform:scale(.2) translateY(20px)}35%{opacity:1}100%{opacity:0;transform:scale(1.8) translateY(-100px)}}
+
+
+.typewriter-text{display:inline}
+.typewriter-caret::after{content:"";display:inline-block;width:2px;height:1em;margin-right:2px;vertical-align:-.12em;background:currentColor;animation:typingBlink .75s steps(1) infinite}
+@keyframes typingBlink{50%{opacity:0}}
+
+</style>
+</head>
+<body>
+
+<div class="gate" id="secretGate">
+  <div class="gate-panel">
+    <p class="eyebrow">قبل ما تبدأ الحكاية… 💌</p>
+    <h1>سؤال صغير ليكي يا رحومة ❤️</h1>
+    <p>أكتر حركة برخم عليكي فيها، إيه المكان اللي بمسكك منه؟ 😂</p>
+    <form id="secretForm">
+      <input class="gate-input" id="secretAnswer" type="text" placeholder="اكتبي إجابتك هنا…" autocomplete="off" required>
+      <div class="btnrow"><button class="btn primary" type="submit">افتحي المفاجأة ✨</button></div>
+    </form>
+    <div class="gate-message" id="gateMessage" aria-live="polite"></div>
+  </div>
+</div>
+<div class="gate-stars" id="gateStars" aria-hidden="true"></div>
+
+<div id="sky" aria-hidden="true"><div class="moon"></div></div>
+<div class="wrap">
+  <header class="topbar"><div class="logo">حكاية صغيرة لرحومة <span class="heart">♥</span></div><div class="progress" id="progress">الصفحة ١ من ٥</div></header>
+  <main>
+    <section class="page active" data-page="0">
+      <div class="panel">
+        <p class="eyebrow">تحت نفس السما… في حد مميز جدًا</p>
+        <h1>كل سنة وإنتِ <span style="color:#ffadd9">نور السما</span></h1>
+        <p class="sub">يا رحومة، عملتلك حكاية صغيرة، كل دوسة فيها مخبية حاجة من قلبي ليكي. خدي نفس عميق وابدئي رحلتك ❤️</p>
+        <div class="countdown" id="countdown">
+          <div class="timebox"><strong id="days">--</strong><span>يوم</span></div>
+          <div class="timebox"><strong id="hours">--</strong><span>ساعة</span></div>
+          <div class="timebox"><strong id="minutes">--</strong><span>دقيقة</span></div>
+          <div class="timebox"><strong id="seconds">--</strong><span>ثانية</span></div>
+        </div>
+        <p class="smallnote">مستنية يوم 29 نوفمبر ٢٠٢٦… يوم اتولد فيه حد غالي أوي.</p>
+        <div class="btnrow"><button class="btn primary" onclick="go(1)">ابدئي المفاجأة ✨</button></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="1">
+      <div class="panel">
+        <p class="eyebrow">صفحة مخصوص ليكي</p><h2>جواب من قلبي 💌</h2>
+        <div class="letter">
+          <p>يا رحومة،</p>
+          <p>مش عارف أبدأ كلامي منين، لأن مهما كتبت هيفضل جوايا كلام أكتر بكتير من اللي الحروف تقدر تشيله. وجودك في حياتي بيخلّي الأيام العادية ليها طعم مختلف، وبيخلّي أبسط التفاصيل تستاهل تتعاش.</p>
+          <p>بتمنالك سنة جديدة شبه قلبك: جميلة، حنينة، ومليانة حاجات تفرّحك. أتمنى ضحكتك تفضل منوّرة وشك، وكل حاجة نفسك فيها تقرب منك خطوة بخطوة. ولو في يوم الدنيا تعبتك، أتمنى تفتكري إنك تستاهلي الحب والراحة والفرحة، من غير ما تضطري تثبتي ده لأي حد.</p>
+          <p>عيد ميلاد سعيد يا أجمل رحومة، ويا رب أفضل أشوفك مبسوطة، وأكون سبب في ابتسامة حلوة على وشك كل ما أقدر. ❤️</p>
+          <div class="signature">من حد بيحبك أوي ♥</div>
+        </div>
+        <div class="btnrow"><button class="btn secondary" onclick="go(0)">رجوع</button><button class="btn primary" onclick="go(2)">لسه في حكاية تانية ←</button></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="2">
+      <div class="panel">
+        <p class="eyebrow">لحظات تستاهل تتحفظ</p><h2>ألبوم الذكريات 📸</h2>
+        <p class="sub">حط صوركم هنا، وكل صورة هتبقى ذكرى صغيرة جوه الحكاية. الصور اللي تختارها بتفضل على جهازك ومش بتترفع لأي مكان.</p>
+        <div class="gallery" id="gallery">
+          <div class="photo"><span>ذكرى حلوة ١ ✨</span></div><div class="photo"><span>ضحكة من القلب 💗</span></div><div class="photo"><span>أحلى لحظة 🌙</span></div>
+          <div class="photo"><span>تفصيلة بحبها 🌸</span></div><div class="photo"><span>يوم مميز 🫶</span></div><div class="photo"><span>ذكرى عمرها ما تتنسي</span></div>
+        </div>
+        <label class="upload">اختار صور من جهازك <input id="photos" type="file" accept="image/*" multiple></label>
+        <div class="toast" id="photoMsg"></div>
+        <div class="btnrow"><button class="btn secondary" onclick="go(1)">رجوع</button><button class="btn primary" onclick="go(3)">يلا نحقق أمنيات 🎁</button></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="3">
+      <div class="panel">
+        <p class="eyebrow">من قلبي لقلبك</p><h2>أمنيات لرحومة ✨</h2>
+        <p class="sub">في يومك الجديد، دي شوية حاجات بتمنّاها ليكي من كل قلبي.</p>
+        <div class="wishes">
+          <div class="wish">🌷 أيام أهدى، وقلب مطمّن، وبال مرتاح.</div>
+          <div class="wish">🌟 أحلام تكبر قدام عينيكي وتتحقق واحدة واحدة.</div>
+          <div class="wish">💗 ناس صادقة حواليكي، وحب يليق بقلبك.</div>
+          <div class="wish">🦋 ضحكة كتير، ومغامرات حلوة، وذكريات تفرّحك.</div>
+        </div>
+        <div class="btnrow"><button class="btn secondary" onclick="go(2)">رجوع</button><button class="btn primary" onclick="go(4)">افتحي آخر مفاجأة 🎂</button></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="4">
+      <div class="panel">
+        <p class="eyebrow">وصلنا للحظة اللي مستنيينها</p><h2>اطلبي أمنية يا رحومة 🎂</h2>
+        <p class="sub">غمّضي عينيكي ثانية، اتمني أمنية حلوة، وبعدها دوسي على التورتة عشان تطفي الشمعة.</p>
+        <div class="cake-scene" id="cake" role="button" tabindex="0" aria-label="اطفي الشمعة" onclick="blowCandles()">🎂<span class="candle" id="flame">🕯️</span></div>
+        <div class="toast" id="cakeMsg">الأمنية سر بينك وبين السما 🤫</div>
+        <div id="finalReveal" style="display:none">
+          <div class="final-stars">✦ ✧ ⋆ ✧ ✦</div>
+          <div class="final-name">رحومة ❤️</div>
+          <p>يا رب سنتك الجديدة تبقى أجمل من كل اللي فات، وكل نجمة في السما تفكّرك إنك تستاهلي الفرح والحب. كل سنة وإنتِ حبيبتي وأحلى صدفة في الدنيا.</p>
+          <p style="color:#ffc5e6">عيد ميلاد سعيد يا روح قلبي 🌙</p>
+          <div class="btnrow"><button class="btn secondary" onclick="go(0)">نعيش الحكاية من الأول ↺</button></div>
+        </div>
+        <div class="btnrow" id="cakeNav"><button class="btn secondary" onclick="go(3)">رجوع</button></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">اتعملت بحب مخصوص لرحومة <span class="heart">♥</span></footer>
+</div>
+<script>
+
+const secretForm=document.getElementById('secretForm');
+const secretAnswer=document.getElementById('secretAnswer');
+const secretGate=document.getElementById('secretGate');
+const gateMessage=document.getElementById('gateMessage');
+const gateStars=document.getElementById('gateStars');
+secretForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const answer=secretAnswer.value.trim().toLowerCase().replace(/[أإآ]/g,'ا').replace(/\s+/g,'');
+  if(answer==='منخيري'||answer==='مناخيري'){
+    gateMessage.textContent='عرفتي الإجابة يا شاطرة ❤️';
+    for(let i=0;i<75;i++){
+      const star=document.createElement('i');
+      star.className='gate-star';
+      star.style.left=(Math.random()*100)+'%';
+      star.style.top=(Math.random()*100)+'%';
+      star.style.animationDelay=(Math.random()*.7)+'s';
+      gateStars.appendChild(star);
+    }
+    setTimeout(()=>{secretGate.classList.add('hidden');gateStars.innerHTML='';},1900);
+  }else{
+    gateMessage.textContent='إيه يا بنتي، نسيتي ولا إيه؟ 😂❤️';
+    secretAnswer.value='';
+    secretAnswer.focus();
+  }
+});
+
+const sky=document.getElementById('sky');
+for(let i=0;i<115;i++){const s=document.createElement('i');s.className='star';s.style.left=(Math.random()*100)+'%';s.style.top=(Math.random()*100)+'%';const z=(Math.random()*2.6+1)+'px';s.style.width=z;s.style.height=z;s.style.setProperty('--dur',(Math.random()*3+1.5)+'s');s.style.animationDelay=(Math.random()*3)+'s';sky.appendChild(s)}
+
+function typePageText(page){
+  if(!page || page.dataset.typed==='yes') return;
+  page.dataset.typed='yes';
+  const walker=document.createTreeWalker(page,NodeFilter.SHOW_TEXT,{
+    acceptNode(node){
+      if(!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      const parent=node.parentElement;
+      if(!parent || parent.closest('script,style')) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodes=[];
+  while(walker.nextNode()) nodes.push(walker.currentNode);
+  const jobs=nodes.map(node=>{
+    const span=document.createElement('span');
+    span.className='typewriter-text';
+    const fullText=node.nodeValue;
+    span.textContent='';
+    node.parentNode.replaceChild(span,node);
+    return {span,fullText};
+  });
+  let jobIndex=0, charIndex=0;
+  function typeNext(){
+    if(jobIndex>=jobs.length) return;
+    const job=jobs[jobIndex];
+    job.span.classList.add('typewriter-caret');
+    if(charIndex<job.fullText.length){
+      job.span.textContent+=job.fullText.charAt(charIndex++);
+      const ch=job.fullText.charAt(charIndex-1);
+      const delay=/[،.!؟…]/.test(ch)?190:(/[ \n]/.test(ch)?22:34);
+      setTimeout(typeNext,delay);
+    }else{
+      job.span.classList.remove('typewriter-caret');
+      jobIndex++;charIndex=0;
+      setTimeout(typeNext,90);
+    }
+  }
+  typeNext();
+}
+
+let current=0;
+const pages=[...document.querySelectorAll('.page')];
+const numerals=['١','٢','٣','٤','٥'];
+function go(n){pages[current].classList.remove('active');current=n;pages[current].classList.add('active');document.getElementById('progress').textContent='الصفحة '+numerals[n]+' من ٥';window.scrollTo({top:0,behavior:'smooth'});typePageText(pages[current]);}
+const target=new Date('2026-11-29T00:00:00');
+function updateCountdown(){let diff=target-new Date();if(diff<0)diff=0;const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);document.getElementById('days').textContent=d;document.getElementById('hours').textContent=h;document.getElementById('minutes').textContent=m;document.getElementById('seconds').textContent=s}
+updateCountdown();setInterval(updateCountdown,1000);typePageText(pages[0]);
+document.getElementById('photos').addEventListener('change',e=>{const files=[...e.target.files].filter(f=>f.type.startsWith('image/')).slice(0,9);const gallery=document.getElementById('gallery');gallery.innerHTML='';files.forEach((f,i)=>{const box=document.createElement('div');box.className='photo';const img=document.createElement('img');img.src=URL.createObjectURL(f);img.alt='ذكرى '+(i+1);box.appendChild(img);gallery.appendChild(box)});document.getElementById('photoMsg').textContent=files.length?'اتضافت الصور للعرض على جهازك ❤️':'اختار صور علشان نملأ الألبوم';});
+let blown=false;
+function blowCandles(){if(blown)return;blown=true;document.getElementById('flame').style.display='none';document.getElementById('cakeMsg').textContent='أمنيتك طلعت للسما يا رحومة ✨';document.getElementById('finalReveal').style.display='block';typePageText(document.getElementById('finalReveal'));document.getElementById('cakeNav').style.display='none';for(let i=0;i<55;i++){const c=document.createElement('i');c.className='star';c.style.left=(Math.random()*100)+'%';c.style.top=(Math.random()*100)+'%';c.style.width=(Math.random()*5+2)+'px';c.style.height=c.style.width;c.style.background=['#ffd4ef','#fff1b5','#c9b6ff'][i%3];c.style.animationDuration=(Math.random()*1.5+.6)+'s';sky.appendChild(c)}}
+document.getElementById('cake').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();blowCandles()}});
+</script>
+</body>
+</html>
